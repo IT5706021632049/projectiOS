@@ -1,0 +1,72 @@
+
+<!-- <ActionBar class="bg">
+        <StackLayout>
+                <GridLayout columns="36, *" rows="30" width="100%" height="100%">
+                <Label row="0" col="0" class="mdi" [text]="'mdi-menu' | fonticon" (tap) = "openDrawer()"></Label>
+                <label row="0" col="1" class="setCenter w Cloud-Lights"  style="color :white" text="PERSONAL HEALTH CARE"></label>
+                </GridLayout>
+        </StackLayout>
+</ActionBar> -->
+
+<ScrollView sdkExampleTitle sdkToggleNavButton>
+<StackLayout>
+                <sidebar #sidebar></sidebar>      
+                <StackLayout class="bg">
+                                <GridLayout columns="10,102, *" rows="50" width="100%" height="100%">
+                                <Label row="0" col="1" class="mdi" [text]="'mdi-menu' | fonticon" (tap) = "openDrawer()"></Label>
+                                <label row="0" col="0"></label>
+                                <label row="0" col="2" class=" w Cloud-Lights"  style="color :white" text="BHUBEJHR CARE"></label>
+                                </GridLayout>
+                        </StackLayout>
+        <StackLayout>
+                        <GridLayout columns="*, *, *" rows="20, 60, 10, 40, 20, 60, 10, 40, 20, 60, 10, 40" width="100%" height="100%">
+
+                                        <label row="0" col="0" class="" text="" (tap) = "toProfileUser()"></label>
+                                        <Image row="1" col="0" class="imgSizeGrid "  src="~/images/profile.jpg" (tap) = "toProfileUser()"></Image>
+                                        <label row="2" col="0" class="" text="" (tap) = "toProfileUser()"></label>
+                                        <label row="3" col="0" class="setCenter Cloud-Light2" text="ประวัติส่วนตัว" (tap) = "toProfileUser()"></label>
+                
+                                        <label row="0" col="1" class="" text="" (tap) = "toHyper()"></label>
+                                        <Image row="1" col="1" class="imgSizeGrid " src="~/images/hyper.jpg" (tap) = "toHyper()"></Image>
+                                        <label row="2" col="1" class="" text="" (tap) = "toHyper()"></label>
+                                        <label row="3" col="1" class="setCenter Cloud-Light2" text="สุขภาพทั่วไป" (tap) = "toHyper()"></label>
+                
+                                        <label row="0" col="2" class="" text="" (tap) = "toBlood()"></label>
+                                        <Image row="1" col="2" class="imgSizeGrid" src="~/images/blood.jpg" (tap) = "toBlood()"></Image>
+                                        <label row="2" col="2" class="" text="" (tap) = "toBlood()"></label>
+                                        <label row="3" col="2" class="setCenter Cloud-Light2" text="ผลแลป" (tap) = "toBlood()"></label>
+                
+                                        <label row="4" col="0" class="" text="" (tap) = "toAppointment()"></label>
+                                        <Image row="5" col="0" class="imgSizeGrid " src="~/images/meet.jpg" (tap) = "toAppointment()"></Image>
+                                        <label row="6" col="0" class="" text="" (tap) = "toAppointment()"></label>
+                                        <label row="7" col="0" class="setCenter Cloud-Light2" text="หมายนัด" (tap) = "toAppointment()"></label>
+                
+                                        <label row="4" col="1" class="" text="" (tap) = "toMedicine()"></label>
+                                        <Image row="5" col="1" class="imgSizeGrid " src="~/images/medecine.jpg" (tap) = "toMedicine()"></Image>
+                                        <label row="6" col="1" class="" text="" (tap) = "toMedicine()"></label>
+                                        <label row="7" col="1" class="setCenter Cloud-Light2" text="ยาและวิธีการใช้" (tap) = "toMedicine()"></label>
+                
+                                        <label row="4" col="2" class="" text="" (tap) = "toCost()"></label>
+                                        <Image row="5" col="2" class="imgSizeGrid" src="~/images/pay.jpg" (tap) = "toCost()"></Image>
+                                        <label row="6" col="2" class="" text="" (tap) = "toCost()"></label>
+                                        <label row="7" col="2" class="setCenter Cloud-Light2" text="ค่าใช้จ่าย" (tap) = "toCost()"></label>
+                
+                                        <label row="8" col="0" class="" text="" (tap) = "web()"></label>
+                                        <Image row="9" col="0" class="imgSizeGrid " src="~/images/www.jpg" (tap) = "web()"></Image>
+                                        <label row="10" col="0" class="" text="" (tap) = "web()"></label>
+                                        <label row="11" col="0" class="setCenter Cloud-Light2" text="เว็บไซต์" (tap) = "web()"></label>
+                
+                                        <label row="8" col="1" class="" text="" (tap) = "news()"></label>
+                                        <Image row="9" col="1" class="imgSizeGrid " src="~/images/news.png" (tap) = "news()"></Image>
+                                        <label row="10" col="1" class="" text="" (tap) = "news()"></label>
+                                        <label row="11" col="1" class="setCenter Cloud-Light2" text="ข่าวสาร" (tap) = "news()"></label>
+                
+                                        <label row="8" col="2" class="" text="" (tap) = "showBarcode()"></label>
+                                        <Image row="9" col="2" class="imgSizeGrid " src="~/images/barcode.png" (tap) = "showBarcode()"></Image>
+                                        <label row="10" col="2" class="" text="" (tap) = "showBarcode()"></label>
+                                        <label row="11" col="2" class="setCenter Cloud-Light2" text="หมายเลข HN" (tap) = "showBarcode()"></label>
+                
+                                </GridLayout>
+        </StackLayout>         
+</StackLayout>
+</ScrollView>

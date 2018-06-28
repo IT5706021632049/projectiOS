@@ -1,0 +1,87 @@
+
+<ActionBar title="หมายนัด" class="bg w">
+        <!-- <StackLayout>
+                <GridLayout width="100%" height="100%">
+                        <Label horizontalAlignment="right" class="mdi rights" [text]="'mdi-menu' | fonticon" (tap) = "openDrawer()"></Label> 
+                        <Label horizontalAlignment="left" class="mdi" [text]="'mdi-arrow-back' | fonticon" (tap) = "toBack()"></Label>
+                        <label horizontalAlignment="center" class="setCenter w Cloud-Lights" text="หมายนัด"></label>
+                </GridLayout>
+        </StackLayout> -->
+</ActionBar>
+
+<Stacklayout>
+        <sidebar #sidebar></sidebar>
+<StackLayout *ngIf = "appoint1">
+        <GridLayout columns = "10, 80, *" rows = "15, 25, 25, 25, 5, 10" width="100%" height="100%" (tap) = "change()">
+                <label row = "0" col = "0" class = "" text = ""></label>
+                <Label row = "1" col = "1" rowSpan="2" class = "mdis setCenter" [text]="'mdi-event-note' | fonticon"></Label>
+                <Label row = "3" col = "1" class = "Cloud-Light setCenter " text="รายละเอียด"></Label>
+                <Label row = "1" col = "2" colSpan="2" class="Cloud-Light black lefts" [text]="oneDes"></Label>
+                <Label row = "2" col = "2" class = "Cloud-Light black lefts" [text]='getFormatDate(oneDay)'></Label>
+                <Label row = "3" col = "2" class = "Cloud-Light black lefts " [text]='oneTime'></Label>
+                <label row = "3" col = "3" class = "" text=""></label>
+        </GridLayout>
+</StackLayout>
+<StackLayout *ngIf = "appoint2">
+        <GridLayout columns="15, 60, *, 15" rows="20, 25, 20, 25, 20, 25, 20, 25, 20, 25, 20, 25" width="100%" height="80%">
+                <label row="1" col="0" text=""></label>
+                <label row="1" col="3" class="" text=""></label>
+                <Label row="1" col="1" class = "black Cloud-Light4 " text="แพทย์"></Label>
+                <Label row="1" col="2" class="Cloud-Light right " [text]="oneDocName"></Label>
+
+                <label row="2" col="0" text=""></label>
+                <label row="3" col="3" class="" text=""></label>
+                <Label row="3" col="1" class = "black Cloud-Light4 " text="สถานที่"></Label>
+                <Label row="3" col="2" class="Cloud-Light right " [text]="oneLocation"></Label>
+
+                <label row="4" col="0" text=""></label>
+                <label row="5" col="3" class="" text=""></label>
+                <Label row="5" col="1" class = "black Cloud-Light4 " text="แผนก"></Label>
+                <Label row="5" col="2" class="Cloud-Light right " [text]="oneDeName"></Label>
+
+                <label row="6" col="0" text=""></label>
+                <label row="7" col="3" class="" text=""></label>
+                <Label row="7" col="1" class = "black Cloud-Light4 " text="วัน-เวลา"></Label>
+                <Label row="7" col="2" class="Cloud-Light right " [text]="getFormatDate(oneDay)"></Label>
+
+                <label row="8" col="0" text=""></label>
+                <label row="9" col="3" class="" text=""></label>
+                <Label row="9" col="1" class = "black Cloud-Light4 " text="กิจกรรม"></Label>
+                <Label row="9" col="2" class="Cloud-Light right " [text]="oneDes"></Label>
+
+        </GridLayout>
+ 
+<button class="sizeLogin Cloud-Light4" style = "color :white" text = "เลื่อนนัด" (tap) = "change2()"></button>>
+</StackLayout>
+
+
+<StackLayout>
+        <ListView *ngIf = "appoint3" [items]="docterWorkingShow" (itemTap)="selectDay($event)">
+                <ng-template let-item="item" let-i="index" let-odd="odd" let-even="even">
+                        <StackLayout [class.odd]="odd" [class.even]="even">
+                                <GridLayout *ngIf = "checkDocter(item)" columns="20, 225, *" rows="30, 25, 20">
+                                        <label row="0" col="0" text=""></label>
+                                        <Label row="1" col="1" class = "Cloud-Light8 black" [text]='"วันที่ " + getFormatDate(item.docterWorking_day)'></Label>
+                                        <label row="1" col="2" class = "Cloud-Light2 setCenter" text="เลื่อนนัด"></label>
+                                        <Label row="2" col="1" class = "Cloud-Light2 black" text=''></Label>
+                                </GridLayout>
+                        </StackLayout>
+                </ng-template>
+        </ListView>
+</StackLayout>
+
+<StackLayout *ngIf = "appoint4">
+                <ListView [items]="timeShow" (itemTap) = "onItemTap2($event)">
+                        <ng-template let-item="item" let-i="index" let-odd="odd" let-even="even">
+                                <StackLayout  [class.odd]="odd" [class.even]="even">
+                                        <GridLayout columns="20, 225, *" rows="30, 25, 20" width="100%" height="100%">
+                                                <label row="0" col="0" text=""></label>
+                                                <Label row="1" col="1" class = "Cloud-Light8 black" [text]='item.time'></Label>
+                                                <label row="1" col="2" class = "Cloud-Light2 setCenter" text="เลื่อนนัด"></label>
+                                                <Label row="2" col="1" class = "Cloud-Light2 black" text=''></Label>
+                                        </GridLayout>
+                                </StackLayout>
+                        </ng-template>
+                </ListView>
+        </StackLayout>
+</Stacklayout>

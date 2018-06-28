@@ -1,0 +1,62 @@
+
+<ActionBar title="ประวัติส่วนตัว" class="bg w">
+        <!-- <StackLayout>
+                <GridLayout width="100%" height="100%">
+                        <Label horizontalAlignment="right" class="mdi rights" [text]="'mdi-menu' | fonticon" (tap) = "openDrawer()"></Label>
+                        <label horizontalAlignment="center" class="setCenter w Cloud-Lights" text="ประวัติส่วนตัว"></label>
+                </GridLayout>
+        </StackLayout> -->
+</ActionBar>
+
+<ScrollView sdkExampleTitle sdkToggleNavButton>
+<StackLayout>
+        <sidebar #sidebar></sidebar>
+        <GridLayout columns="15, 111, *, 15" rows="20, 25, 20, 25, 20, 25, 20, 25, 20, 25, 20, 25, 20, 25, 20, 45, 20, 25, 20, 25" width="100%" height="100%">
+                <label row="1" col="0" text=""></label>
+                <label row="1" col="3" class="" text=""></label>
+                <Label row="1" col="1" class = "black Cloud-Light4 " text="หมายเลขผู้ป่วย"></Label>
+                <Label row="1" col="2" class="Cloud-Light right " [text]="hospitalnumber"></Label>
+
+                <label row="2" col="0" text=""></label>
+                <label row="3" col="3" class="" text=""></label>
+                <Label row="3" col="1" class = "black Cloud-Light4 " text="ชื่อ"></Label>
+                <Label row="3" col="2" class="Cloud-Light right " [text]="first_name"></Label>
+
+                <label row="4" col="0" text=""></label>
+                <label row="5" col="3" class="" text=""></label>
+                <Label row="5" col="1" class = "black Cloud-Light4 " text="นามสกุล"></Label>
+                <Label row="5" col="2" class="Cloud-Light right " [text]="last_name"></Label>
+
+                <label row="6" col="0" text=""></label>
+                <label row="7" col="3" class="" text=""></label>
+                <Label row="7" col="1" class = "black Cloud-Light4 " text="เพศ"></Label>
+                <Label row="7" col="2" class="Cloud-Light right " [text]="gender"></Label>
+
+                <label row="8" col="0" text=""></label>
+                <label row="9" col="3" class="" text=""></label>
+                <Label row="9" col="1" class = "black Cloud-Light4 " text="วันเกิด"></Label>
+                <Label row="9" col="2" class="Cloud-Light right " [text]="dob"></Label>
+
+                <label row="10" col="0" text=""></label>
+                <label row="11" col="3" class="" text=""></label>
+                <Label row="11" col="1" class = "black Cloud-Light4 " text="หมายเลขบัตรประชาชน"></Label>
+                <Label row="11" col="2" class="Cloud-Light right " [text]="cid"></Label>
+                
+                <label row="12" col="0" text=""></label>
+                <label row="13" col="3" class="" text=""></label>
+                <Label row="13" col="1" class = "black Cloud-Light4 " text="สัญชาติ"></Label>
+                <Label row="13" col="2" class="Cloud-Light right " [text]="nationality"></Label>
+
+                <label row="14" col="0" text=""></label>
+                <label row="15" col="3" class="" text=""></label>
+                <Label row="15" col="1" class = "black Cloud-Light4 " text="ที่อยู่"></Label>
+                <textView row="15" col="2" class="Cloud-Light right " editable= "false" [text]="address"></textView>
+        
+                <label row="16" col="0" text=""></label>
+                <label row="17" col="3" class="" text=""></label>
+                <Label row="17" col="1" class = "black Cloud-Light4 " text="โทรศัพท์"></Label>
+                <Label row="17" col="2" class="Cloud-Light right " [text]="tel"></Label>
+        
+        </GridLayout>
+</StackLayout>
+</ScrollView>

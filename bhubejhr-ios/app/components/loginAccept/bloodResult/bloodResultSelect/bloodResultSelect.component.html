@@ -1,0 +1,34 @@
+
+<ActionBar [title]="selectBlood.name" class="bg w">
+        <!-- <StackLayout>
+                <GridLayout width="100%" height="100%">
+                        <Label horizontalAlignment="right" class="mdi rights" [text]="'mdi-menu' | fonticon" (tap) = "openDrawer()"></Label>
+                        <label horizontalAlignment="center" class="setCenter w Cloud-Lights" [text]="selectBlood.name"></label>
+                </GridLayout>
+        </StackLayout> -->
+</ActionBar>
+
+<DockLayout stretchLastChild="false">
+                <ListView *ngIf = "isChart" dock = "top" [items]="datashow" (setupItemView)="onSetupItemView($event)" height="85%">
+                        <ng-template let-item="item" let-i="index" let-odd="odd" let-even="even">
+                                <StackLayout [class.odd]="odd" [class.even]="even">
+                                        <GridLayout columns="10, 200, *" rows="20, 25, 35" width="100%" height="100%">
+                                                <label row="0" col="0" text=""></label>
+                                                <Label row="1" col="1" class="Cloud-Light" [text]='item.datetime'></Label>
+                                                <label row="1" col="2" class="Cloud-Light setCenter" [text]='"  " + item.result + " " + type'></label>
+                                                <Image row="2" col="2" class="setCenter sizePic"  *ngIf="checkDataLab(item.result)" [src]="heart"></Image>
+                                        </GridLayout>
+                                </StackLayout>
+                        </ng-template>
+                </ListView>
+                
+                <StackLayout *ngIf = "isChart" dock = "bottom">
+                        <GridLayout columns="10, *, *, 10" rows="10, 50, 35, 35" width="100%" height="100%">
+                                <label row="0" col="0" text=""></label>
+                                <button row="1" col="1" class="btn-primary setCenter sl sizeLogin Cloud-Lights" text="เกณฑ์" (tap)="showStandard()"></button>
+                                <button row="1" col="2" class="btn-primary setCenter sl sizeLogin Cloud-Lights" text="กราฟ" *ngIf = "showChart" (tap)="toBloodChart()"></button>
+                                <label row="0" col="3" text=""></label>
+                        </GridLayout>
+                </StackLayout>
+                </DockLayout>
+                

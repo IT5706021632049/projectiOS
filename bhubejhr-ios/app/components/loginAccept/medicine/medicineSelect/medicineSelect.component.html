@@ -1,0 +1,24 @@
+
+<ActionBar [title]="diseases.name" class="bg w">
+        <!-- <StackLayout>
+                <GridLayout width="100%" height="100%">
+                        <Label horizontalAlignment="right" class="mdi rights" [text]="'mdi-menu' | fonticon" (tap) = "openDrawer()"></Label>
+                        <label horizontalAlignment="center" class="setCenter w Cloud-Lights" [text]='diseases.name'></label>
+                </GridLayout>
+        </StackLayout> -->
+</ActionBar>
+
+
+        <ListView [items]="dataMidicineShow" (itemTap)="onItemTap($event)">
+                <ng-template let-item="item" let-i="index" let-odd="odd" let-even="even">
+                    <StackLayout class="" [class.odd]="odd" [class.even]="even">
+                        <GridLayout columns="10, *" rows="15, 25, 25, 30" width="100%" height="100%">
+                            <label row="0" col="0" text=""></label>
+                            <Label row="1" col="1" class = "Cloud-Light black" [text]='item.drugname'></Label>
+                            <Label row="2" col="1" class = "Cloud-Light2 black" [text]='item.drugspcnote'></Label>
+                            <Label row="3" col="1" class = "Cloud-Light2" [text]='"# " + item.usename'></Label>
+                        </GridLayout>  
+                    </StackLayout>
+                </ng-template>
+        </ListView>               
+    
